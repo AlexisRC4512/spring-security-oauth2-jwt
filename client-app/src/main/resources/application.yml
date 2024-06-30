@@ -1,0 +1,26 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: "http://127.0.0.1:9000"
+      client:
+        registration:
+          client-app-alexis:
+            provider: spring
+            client-id: client-app-alexis
+            client-secret: 12345
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8080/authorized"
+            scope:
+              - openid
+              - profile
+              - read
+              - write
+            client-name: client-app-alexis
+        provider:
+          spring:
+            issuer-uri: "http://127.0.0.1:9000"
+
+
+
